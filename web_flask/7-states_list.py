@@ -11,7 +11,7 @@ starts a Flask web application listening on
 /state_list: display HTML page with list of all State objects
 """
 from models import storage
-from models import *
+from models.state import State
 from flask import Flask, render_template
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -72,19 +72,19 @@ def html_odd_or_even(n):
 
 
 @app.teardown_appcontext
-def tear_down(self):
+def teardown_db(exception):
     """after each request remove current SQLAlchemy session"""
     storage.close()
 
 
 @app.route('/states_list')
-def html_fetch_states():
+def states_list():
     """display html page
        fetch sorted states to insert into html in UL tag
     """
-    state_objs = [s for s in storage.all("State").values()]
-    return render_template('7-states_list.html',
-                           state_objs=state_objs)
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda state: state.name)
+    return render_template('7-states_list.html', states=states)
 
 
 if __name__ == "__main__":
