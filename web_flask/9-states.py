@@ -129,7 +129,7 @@ def states_list():
     """
     states = storage.all(State).values()
     states = sorted(states, key=lambda state: state.name)
-    return render_template('7-states_list.html', states=states)
+    return render_template('9-states.html', states=states)
 
 
 @app.route('/cities_by_states')
