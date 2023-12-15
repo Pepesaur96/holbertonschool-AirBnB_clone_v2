@@ -1,17 +1,7 @@
 #!/usr/bin/python3
 """
-Starts a Flask web application listening on 0.0.0.0, port 5000
-and routes /: display “Hello HBNB!”
-    /hbnb: display “HBNB”
-    /c/<text>: display "C" + text (replaces underscores with spaces)
-    /python/(<text>): display "Python" + text (default is 'is cool')
-    /number/<int:n>: display "n is a number" only if n is an integer
-    /number_template/<int:n>: display HTML page only if n is an integer
-    /number_odd_or_even/<int:n>: display HTML page only if n is an integer
-    /state_list: display HTML page with list of all State objects
-    /cities_by_states: display HTML page with list of all City objects
-    /states/<id>: display HTML page with list of all City objects
-    /states: display HTML page with list of all State objects
+This module defines a Flask web application for the HBNB project.
+It includes routes to display HTML pages with lists of State and City objects.
 """
 from models import storage
 from models.state import State
