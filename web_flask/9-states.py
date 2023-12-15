@@ -11,6 +11,7 @@ starts a Flask web application listening on
 /state_list: display HTML page with list of all State objects
 /cities_by_states: display HTML page with list of all City objects
 /state/<id>: display HTML page with list of all City objects
+/state: display HTML page with list of all State objects
 """
 from models import storage
 from models.state import State
