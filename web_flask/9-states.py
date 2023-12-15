@@ -10,6 +10,8 @@ starts a Flask web application listening on
 /number_odd_or_even/<n>: display HTML page only if n is an integer
 /state_list: display HTML page with list of all State objects
 /cities_by_states: display HTML page with list of all City objects
+/states: display HTML page with list of all State objects
+/states/<id>: display HTML page with list of all City objects
 """
 from flask import Flask, render_template
 from models import storage, State
