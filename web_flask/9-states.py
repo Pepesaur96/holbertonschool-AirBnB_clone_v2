@@ -158,8 +158,9 @@ def states_id(id):
     Returns:
         HTML: HTML page with list of all City objects
     """
-    states = storage.all(State).values()
-    state = next(filter(lambda x: x.id == id, states), None)
+    state = storage.get(State, id)
+    if state is not None:
+        state.cities = sorted(state.cities, key=lambda city: city.name)
     return render_template('9-states.html', state=state)
 
 
