@@ -144,7 +144,7 @@ def cities_by_states():
     states = sorted(states, key=lambda state: state.name)
     for state in states:
         state.cities = sorted(state.cities, key=lambda city: city.name)
-    return render_template('8-cities_by_states.html', states=states)
+    return render_template('9-states.html', states=states)
 
 
 @app.route('/states/<id>')
