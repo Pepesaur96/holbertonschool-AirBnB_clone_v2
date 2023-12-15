@@ -107,5 +107,13 @@ def states_id(id):
     return render_template('9-states.html', state=state)
 
 
+@app.route('/states')
+def states_list():
+    """display a HTML page with list of all State objects"""
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda state: state.name)
+    return render_template('9-states.html', states=states)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
