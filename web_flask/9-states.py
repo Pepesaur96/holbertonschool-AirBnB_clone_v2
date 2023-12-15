@@ -5,13 +5,13 @@ starts a Flask web application listening on
 /hbnb: display “HBNB”
 /c/<text>: display "C" + text (replaces underscores with spaces)
 /python/(<text>): display "Python" + text (default is 'is cool')
-/number/<n>: display "n is a number" only if n is an integer
-/number_template/<n>: display HTML page only if n is an integer
-/number_odd_or_even/<n>: display HTML page only if n is an integer
+/number/<int:n>: display "n is a number" only if n is an integer
+/number_template/<int:n>: display HTML page only if n is an integer
+/number_odd_or_even/<int:n>: display HTML page only if n is an integer
 /state_list: display HTML page with list of all State objects
 /cities_by_states: display HTML page with list of all City objects
-/state/<id>: display HTML page with list of all City objects
-/state: display HTML page with list of all State objects
+/states/<id>: display HTML page with list of all City objects
+/states: display HTML page with list of all State objects
 """
 from models import storage
 from models.state import State
